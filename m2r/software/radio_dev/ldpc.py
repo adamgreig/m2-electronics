@@ -66,7 +66,7 @@ x = np.unpackbits(np.array((
 ), dtype=np.uint8))
 cw1 = (np.dot(x, G) % 2).astype(np.uint8)
 cw1_llr = -5.0 * ((2 * cw1.astype(np.double)) - 1) + np.random.randn(256) * 2.0
-print(", ".join("{: .2f}".format(f) for f in cw1_llr))
+# print(", ".join("{: .2f}".format(f) for f in cw1_llr))
 # print(" ".join("{:02X}".format(b) for b in np.packbits(cw1)))
 
 # Method two, generate H (the full parity check matrix) from the definition in
@@ -125,6 +125,13 @@ H[M0:M1, M7:M8] = IM
 H[M1:M2, M7:M8] = PM(20)
 H[M2:M3, M7:M8] = PM(21)
 H[M3:M4, M7:M8] = ZM
+
+#edges = np.transpose(np.nonzero(H))
+#for edge in edges:
+    #print(tuple(edge))
+#import sys
+#sys.exit(0)
+
 
 P = H[:, M4:]
 Q = H[:, :M4]

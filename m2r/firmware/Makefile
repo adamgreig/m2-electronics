@@ -226,7 +226,7 @@ include $(RULESPATH)/rules.mk
 ##############################################################################
 # Black Magic Probe flashing via GDB
 #
-BMPPORT = /dev/serial/by-id/usb-Black_Sphere_Technologies_Black_Magic_Probe_E3BFB8A0-if00
+BMPPORT = $(wildcard /dev/serial/by-id/*Black_Magic_Probe*if00)
 flash: build/$(PROJECT).elf
 	arm-none-eabi-gdb --batch \
 		              -ex "target extended-remote $(BMPPORT)" \

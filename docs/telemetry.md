@@ -102,7 +102,6 @@ the `Data` section.
        2     3      GPS Altitude   [height height_msl]
        3     7      GPS Status     [fix_type flags num_sv 0 0 0 0 0]
 
-;qa
 ## Checksum
 
 CRC16-CCITT with polynomial 0x1021 and initial value 0xFFFF, no 
